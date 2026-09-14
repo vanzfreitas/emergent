@@ -49,8 +49,10 @@ UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 BAHIA = ZoneInfo("America/Bahia")
 
-TIPOS_SERVICO = ["Obra", "Reforma", "Adequação", "Infraestrutura", "Piso e revestimento",
-                 "Forro e acabamento", "Manutenção", "Climatização", "Outro"]
+TIPOS_SERVICO = ["Obra residencial", "Obra comercial", "Reforma residencial", "Reforma comercial", "Adequação",
+                 "Infraestrutura", "Piso e revestimento", "Forro e acabamento", "Manutenção", "Climatização", "Outro"]
+TIPOS_ATENDIMENTO = ["Orçamento", "Visita técnica"]
+PERIODOS = ["Manhã", "Tarde"]
 ALLOWED_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".mp4", ".mov", ".pdf", ".doc", ".docx"}
 MAX_FILE_SIZE = 15 * 1024 * 1024
 MAX_FILES = 5
@@ -186,7 +188,10 @@ def build_email_html(d: dict) -> str:
         + row("Empresa", escape(d["empresa"]) or "—")
         + row("WhatsApp", escape(d["whatsapp"]))
         + row("E-mail", escape(d["email"]))
-        + row("Cidade", escape(d["cidade"]))
+        + row("Endereço", escape(d["endereco_completo"]))
+        + row("Ponto de referência", escape(d["ponto_referencia"]) or "—")
+        + row("Atendimento", escape(d["tipo_atendimento"]))
+        + row("Data / período", escape(f"{d['data_preferida_br']} — {d['periodo']}"))
         + row("Tipo de serviço", escape(d["tipo_servico"]))
         + row("Descrição da necessidade", desc)
         + row("Arquivos anexados", files_html)
@@ -203,12 +208,14 @@ def build_whatsapp_message(d: dict) -> str:
     arquivos = "Sim" if d["arquivos"] else "Não"
     return (
         "🔔 *NOVO FORMULÁRIO — KSV SITE*\n\n"
-        "*Novo orçamento recebido pelo site.*\n\n"
+        f"*Nova solicitação de {d['tipo_atendimento'].lower()} recebida pelo site.*\n\n"
         f"👤 *Cliente:* {d['nome']}\n\n"
         f"🏢 *Empresa:* {d['empresa'] or '—'}\n\n"
         f"📱 *WhatsApp:* {d['whatsapp']}\n\n"
         f"📧 *E-mail:* {d['email']}\n\n"
-        f"📍 *Cidade:* {d['cidade']}\n\n"
+        f"📍 *Endereço:* {d['endereco_completo']}\n\n"
+        f"🧭 *Referência:* {d['ponto_referencia'] or '—'}\n\n"
+        f"📅 *Data / período:* {d['data_preferida_br']} — {d['periodo']}\n\n"
         f"🛠️ *Serviço:* {d['tipo_servico']}\n\n"
         f"📝 *Solicitação:*\n{d['descricao']}\n\n"
         f"📎 *Arquivos:* {arquivos}\n\n"
@@ -243,7 +250,17 @@ async def create_lead(
     empresa: str = Form(""),
     whatsapp: str = Form(...),
     email: str = Form(...),
+    cep: str = Form(...),
+    logradouro: str = Form(...),
+    numero: str = Form(...),
+    complemento: str = Form(""),
+    bairro: str = Form(...),
     cidade: str = Form(...),
+    estado: str = Form(...),
+    ponto_referencia: str = Form(""),
+    tipo_atendimento: str = Form(...),
+    data_preferida: str = Form(...),
+    periodo: str = Form(...),
     tipo_servico: str = Form(...),
     descricao: str = Form(...),
     website: str = Form(""),
@@ -260,7 +277,17 @@ async def create_lead(
     empresa = empresa.strip()
     whatsapp = whatsapp.strip()
     email = email.strip()
+    cep = re.sub(r"\D", "", cep)
+    logradouro = logradouro.strip()
+    numero = numero.strip()
+    complemento = complemento.strip()
+    bairro = bairro.strip()
     cidade = cidade.strip()
+    estado = estado.strip().upper()
+    ponto_referencia = ponto_referencia.strip()
+    tipo_atendimento = tipo_atendimento.strip()
+    data_preferida = data_preferida.strip()
+    periodo = periodo.strip()
     tipo_servico = tipo_servico.strip()
     descricao = descricao.strip()
 
@@ -271,8 +298,23 @@ async def create_lead(
         errors.append("e-mail inválido")
     if len(re.sub(r"\D", "", whatsapp)) < 10:
         errors.append("whatsapp inválido")
+    if len(cep) != 8:
+        errors.append("CEP inválido")
+    if not logradouro or not numero or not bairro:
+        errors.append("endereço incompleto")
     if not cidade:
         errors.append("cidade obrigatória")
+    if len(estado) != 2:
+        errors.append("UF inválida")
+    if tipo_atendimento not in TIPOS_ATENDIMENTO:
+        errors.append("tipo de atendimento inválido")
+    try:
+        data_dt = datetime.strptime(data_preferida, "%Y-%m-%d").date()
+    except ValueError:
+        data_dt = None
+        errors.append("data inválida")
+    if periodo not in PERIODOS:
+        errors.append("período inválido")
     if tipo_servico not in TIPOS_SERVICO:
         errors.append("tipo de serviço inválido")
     if len(descricao) < 5 or len(descricao) > 5000:
@@ -300,13 +342,27 @@ async def create_lead(
         (lead_dir / safe).write_bytes(content)
         saved.append(safe)
 
+    cep_fmt = f"{cep[:5]}-{cep[5:]}"
+    endereco_completo = f"{logradouro}, {numero}" + (f" – {complemento}" if complemento else "") + f" – {bairro}, {cidade}/{estado} – CEP {cep_fmt}"
     doc = {
         "lead_id": lead_id,
         "nome": nome,
         "empresa": empresa,
         "whatsapp": whatsapp,
         "email": email,
+        "cep": cep_fmt,
+        "logradouro": logradouro,
+        "numero": numero,
+        "complemento": complemento,
+        "bairro": bairro,
         "cidade": cidade,
+        "estado": estado,
+        "ponto_referencia": ponto_referencia,
+        "endereco_completo": endereco_completo,
+        "tipo_atendimento": tipo_atendimento,
+        "data_preferida": data_preferida,
+        "data_preferida_br": data_dt.strftime("%d/%m/%Y"),
+        "periodo": periodo,
         "tipo_servico": tipo_servico,
         "descricao": descricao,
         "arquivos": saved,
@@ -320,7 +376,7 @@ async def create_lead(
     try:
         await send_email(
             to=LEADS_EMAIL_TO,
-            subject="Formulario KSV Site",
+            subject=f"[KSV Site] {tipo_atendimento} — {nome} — {data_dt.strftime('%d/%m')} {periodo}",
             html=build_email_html(doc),
             reply_to=email,
         )

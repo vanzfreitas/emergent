@@ -3,8 +3,11 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { UploadCloud, X, Loader2, CheckCircle2, Mail, MapPin, MessageCircle, Globe, FileText } from "lucide-react";
-import { API, useSiteConfig, waLink } from "@/lib/siteConfig";
+import { API, useSiteConfig, waLink, scrollToId } from "@/lib/siteConfig";
 import { Reveal, Eyebrow } from "./Reveal";
+import { Field, SectionTitle, inputCls } from "./form/Field";
+import { EnderecoFields } from "./form/EnderecoFields";
+import { AgendamentoFields } from "./form/AgendamentoFields";
 
 const TIPOS = [
     "Obra residencial",
@@ -20,18 +23,12 @@ const TIPOS = [
     "Outro",
 ];
 
-const INITIAL = { nome: "", empresa: "", whatsapp: "", email: "", cidade: "", tipo_servico: "", descricao: "", website: "" };
-
-const inputCls =
-    "w-full bg-ksv-gunmetal/50 border border-ksv-edge focus:border-ksv-orange outline-none px-4 py-3.5 text-sm text-ksv-silver placeholder:text-zinc-600 transition-colors duration-200";
-
-const Field = ({ label, error, children, testid }) => (
-    <div data-testid={testid}>
-        <label className="block font-mono text-[11px] uppercase tracking-[0.2em] text-ksv-silvermid mb-2">{label}</label>
-        {children}
-        {error && <p className="mt-1.5 text-xs text-red-400">{error}</p>}
-    </div>
-);
+const INITIAL = {
+    nome: "", empresa: "", whatsapp: "", email: "",
+    cep: "", logradouro: "", numero: "", complemento: "", bairro: "", cidade: "", estado: "", ponto_referencia: "",
+    tipo_atendimento: "", data_preferida: "", periodo: "",
+    tipo_servico: "", descricao: "", website: "",
+};
 
 export const Formulario = () => {
     const cfg = useSiteConfig();
@@ -42,14 +39,23 @@ export const Formulario = () => {
     const [sentId, setSentId] = useState(null);
     const [failMsg, setFailMsg] = useState("");
 
-    const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+    const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+    const patch = (obj) => setForm((f) => ({ ...f, ...obj }));
 
     const validate = () => {
         const er = {};
         if (form.nome.trim().length < 2) er.nome = "Informe seu nome.";
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.trim())) er.email = "Informe um e-mail válido.";
         if (form.whatsapp.replace(/\D/g, "").length < 10) er.whatsapp = "Informe um WhatsApp válido com DDD.";
+        if (form.cep.replace(/\D/g, "").length !== 8) er.cep = "Informe um CEP válido.";
+        if (!form.logradouro.trim()) er.logradouro = "Informe a rua.";
+        if (!form.numero.trim()) er.numero = "Informe o número.";
+        if (!form.bairro.trim()) er.bairro = "Informe o bairro.";
         if (!form.cidade.trim()) er.cidade = "Informe a cidade.";
+        if (!form.estado) er.estado = "UF";
+        if (!form.tipo_atendimento) er.tipo_atendimento = "Escolha entre orçamento ou visita técnica.";
+        if (!form.data_preferida) er.data_preferida = "Escolha uma data.";
+        if (!form.periodo) er.periodo = "Escolha o período.";
         if (!form.tipo_servico) er.tipo_servico = "Selecione o tipo de serviço.";
         if (form.descricao.trim().length < 5) er.descricao = "Descreva brevemente sua necessidade.";
         setErrors(er);
@@ -73,6 +79,7 @@ export const Formulario = () => {
             const { data } = await axios.post(`${API}/leads`, fd);
             setSentId(data.lead_id);
             toast.success("Solicitação enviada com sucesso!");
+            setTimeout(() => scrollToId("contato"), 50);
         } catch (err) {
             setFailMsg(
                 "Não foi possível enviar sua solicitação no momento. Tente novamente ou fale diretamente conosco pelo WhatsApp."
@@ -179,6 +186,7 @@ export const Formulario = () => {
                                     noValidate
                                     className="grid sm:grid-cols-2 gap-5"
                                 >
+                                    <SectionTitle>Seus dados</SectionTitle>
                                     <Field label="Nome *" error={errors.nome} testid="form-field-nome">
                                         <input data-testid="form-nome-input" className={inputCls} value={form.nome} onChange={set("nome")} placeholder="Seu nome" />
                                     </Field>
@@ -191,10 +199,12 @@ export const Formulario = () => {
                                     <Field label="E-mail *" error={errors.email} testid="form-field-email">
                                         <input data-testid="form-email-input" type="email" className={inputCls} value={form.email} onChange={set("email")} placeholder="voce@email.com.br" />
                                     </Field>
-                                    <Field label="Cidade *" error={errors.cidade} testid="form-field-cidade">
-                                        <input data-testid="form-cidade-input" className={inputCls} value={form.cidade} onChange={set("cidade")} placeholder="Salvador" />
-                                    </Field>
-                                    <Field label="Tipo de serviço *" error={errors.tipo_servico} testid="form-field-tipo">
+                                    <SectionTitle>Endereço do serviço</SectionTitle>
+                                    <EnderecoFields form={form} errors={errors} set={set} patch={patch} />
+                                    <SectionTitle>Atendimento</SectionTitle>
+                                    <AgendamentoFields form={form} errors={errors} patch={patch} />
+                                    <SectionTitle>Sobre o serviço</SectionTitle>
+                                    <Field label="Tipo de serviço *" error={errors.tipo_servico} testid="form-field-tipo" className="sm:col-span-2">
                                         <select data-testid="form-tipo-select" className={inputCls} value={form.tipo_servico} onChange={set("tipo_servico")}>
                                             <option value="">Selecione</option>
                                             {TIPOS.map((t) => (
@@ -286,7 +296,7 @@ export const Formulario = () => {
                                             className="w-full inline-flex items-center justify-center gap-3 bg-ksv-orange hover:bg-ksv-orangehover disabled:opacity-60 text-white font-semibold uppercase tracking-[0.12em] text-sm px-8 py-4 transition-colors duration-200"
                                         >
                                             {sending && <Loader2 size={18} className="animate-spin" />}
-                                            {sending ? "Enviando..." : "Solicitar orçamento"}
+                                            {sending ? "Enviando..." : form.tipo_atendimento === "Visita técnica" ? "Solicitar visita técnica" : "Solicitar orçamento"}
                                         </button>
                                         <p className="mt-4 text-[11px] text-zinc-600 leading-relaxed">
                                             Ao enviar, você concorda com o tratamento dos dados informados conforme a{" "}

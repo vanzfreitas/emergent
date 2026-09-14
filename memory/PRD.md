@@ -55,3 +55,10 @@ Landing page profissional, premium e funcional para a KSV Soluções Integradas 
 - Cidade principal agora é **Salvador**, seguida de Lauro de Freitas, Camaçari e região (Hero, Marquee, Sobre, Formulário, SEO meta).
 - Posicionamento ampliado: atendimento **residencial + empresarial** (Hero, Obras com card "Obras residenciais", Segmentos com "Residências", Diferenciais, Complementares, CTA final, Portfólio "Reforma residencial").
 - Formulário: campo Empresa agora é "Empresa / Condomínio (opcional)"; tipos de serviço separados em residencial/comercial.
+
+## Atualização — Jun/2026 (formulário completo)
+- Endereço completo com autopreenchimento via **ViaCEP** (CEP → rua, bairro, cidade, UF), número, complemento e ponto de referência.
+- Escolha "Orçamento do serviço" ou **"Visita técnica para avaliação"**; data preferida via calendário (pt-BR, sem passado/domingos); período Manhã/Tarde.
+- Backend `POST /api/leads` valida/armazena novos campos (cep, logradouro, numero, complemento, bairro, estado, ponto_referencia, tipo_atendimento, data_preferida, periodo). E-mail/WhatsApp mostram endereço completo, atendimento e data/período. Assunto do e-mail: "[KSV Site] {atendimento} — {nome} — {dd/mm} {período}".
+- Componentes: `components/ksv/form/{Field,EnderecoFields,AgendamentoFields}.jsx`.
+- Corrigido: TIPOS_SERVICO do backend agora bate com o frontend (residencial/comercial).
