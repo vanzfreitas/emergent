@@ -1,0 +1,152 @@
+{
+  "project_name": "KSV Soluções Integradas - Landing Page B2B",
+  "app_type": "landing_page",
+  "positioning": "Empresa especialista em obras, reformas, adequações e soluções de infraestrutura para empresas e estabelecimentos comerciais (B2B). Obras é o foco principal; climatização e manutenção são serviços complementares secundários.",
+  "location": "Lauro de Freitas – Bahia (Atendendo Salvador e Região Metropolitana)",
+  "visual_hierarchy": [
+    "1. OBRAS (Foco Principal)",
+    "2. REFORMAS",
+    "3. ADEQUAÇÕES",
+    "4. INFRAESTRUTURA",
+    "5. SERVIÇOS COMPLEMENTARES"
+  ],
+  "brand_identity": {
+    "colors": {
+      "black_base": "#0A0B0D",
+      "dark_charcoal": "#121418",
+      "surface_gunmetal": "#1A1D24",
+      "card_border_silver": "#2D323E",
+      "metallic_silver_light": "#E2E6EC",
+      "metallic_silver_mid": "#949DAA",
+      "metallic_silver_dark": "#4A5260",
+      "kinetic_orange_primary": "#FF6B00",
+      "kinetic_orange_hover": "#E05D00",
+      "kinetic_orange_glow": "rgba(255, 107, 0, 0.25)",
+      "whatsapp_green": "#25D366"
+    },
+    "typography": {
+      "heading_font": "Barlow Condensed, Syne, sans-serif",
+      "body_font": "Inter, DM Sans, sans-serif",
+      "mono_font": "JetBrains Mono, monospace",
+      "h1_size": "text-4xl sm:text-5xl lg:text-6xl tracking-tight font-extrabold uppercase",
+      "h2_size": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-bold uppercase",
+      "h3_size": "text-xl sm:text-2xl font-semibold",
+      "body_size": "text-base text-gray-300 leading-relaxed",
+      "caption_size": "text-xs uppercase tracking-widest text-orange-500 font-mono"
+    },
+    "aesthetic_tone": "Industrial Premium, Engenharia de Precisão, Técnico, Sofisticado, Corporativo B2B com destaque metálico e acentos de conversão em laranja cinético."
+  },
+  "key_features_and_sections": [
+    {
+      "section_id": "header_nav",
+      "name": "Navegação Superior Flutuante (Header)",
+      "description": "Barra de navegação fixa com efeito Glassmorphism cristal escuro (backdrop-blur-xl bg-black/80 border-b border-white/10). Exibe o logo KSV em metálico com 'S' em laranja, links de navegação rápida (Obras, Reformas, Processo, Segmentos, Projetos, Sobre) e o CTA primário 'Solicitar Orçamento'.",
+      "data_testid": "nav-header"
+    },
+    {
+      "section_id": "hero_section",
+      "name": "Hero Cinético B2B",
+      "description": "Apresentação de alto impacto com revelação de título linha por linha, badge técnico 'Lauro de Freitas, Salvador e Região - BA', proposta de valor focada em Obras e Infraestrutura Comercial B2B, imagem industrial com parallax sutil e duplo CTA (Primário Laranja: 'Solicitar orçamento' | Secundário Metálico/WhatsApp: 'Falar com a KSV'). Inclui indicadores de capacidade operacional.",
+      "data_testid": "hero-section"
+    },
+    {
+      "section_id": "editorial_marquee",
+      "name": "Marquee Editorial Industrial",
+      "description": "Faixa horizontal contínua de velocidade lenta em cinza escuro/prata e laranja destacando os pilares B2B: OBRAS COMERCIAIS • REFORMAS E RETROFIT • ADEQUAÇÕES NORMATIVAS • INFRAESTRUTURA INTEGRADA • LAURO DE FREITAS E SALVADOR • CLIMATIZAÇÃO HVAC.",
+      "data_testid": "editorial-marquee"
+    },
+    {
+      "section_id": "obras_reformas",
+      "name": "Seção Obras, Reformas e Infraestrutura (6 Cards)",
+      "description": "O núcleo da oferta da KSV organizado rigorosamente na hierarquia visual B2B com 6 cards técnicos responsivos em grid Bento assimétrico: 1. Obras Comerciais & Corporativas (Destaque Principal), 2. Reformas Estruturais & Retrofit, 3. Adequações Técnicas & Normativas, 4. Infraestrutura Elétrica e Hidráulica, 5. Climatização HVAC & Exaustão (Complementar), 6. Manutenção Predial Preventiva/Corretiva (Complementar). Cada card conta com especificações técnicas, escopo de entrega e botão de solicitação rápida.",
+      "data_testid": "services-obras-grid"
+    },
+    {
+      "section_id": "processo_trabalho",
+      "name": "Processo de Trabalho de Engenharia (6 Etapas Numeradas 01-06)",
+      "description": "Workflow transparente e corporativo em 6 passos numerados sequenciais: 01. Vistoria Técnica e Diagnóstico -> 02. Planejamento & Cronograma Executivo -> 03. Engenharia de Custos & Orçamento Transparente -> 04. Execução Controlada com ART e Normas ABNT -> 05. Gestão de Qualidade e Segurança do Trabalho -> 06. Entrega Final, As-Built e Garantia.",
+      "data_testid": "process-steps-section"
+    },
+    {
+      "section_id": "diferenciais",
+      "name": "Diferenciais Corporativos KSV",
+      "description": "Grid técnico evidenciando por que empresas e facility managers contratam a KSV: Conformidade com Normas ABNT/NRs, Rígido Cumprimento de Prazos, Mão de Obra Própria e Especializada, Transparência de Custos sem Aditivos Surpresa, Atendimento Regional Ágil (Salvador, Lauro de Freitas e RMS) e Gestão Integrada de Ponta a Ponta.",
+      "data_testid": "diferenciais-section"
+    },
+    {
+      "section_id": "portfolio_galeria",
+      "name": "Portfólio & Projetos Executados (Galeria Interativa com Placeholders)",
+      "description": "Galeria responsiva de projetos comerciais filtrável por categoria (Todas, Obras Comerciais, Reformas & Retrofit, Infraestrutura & Adequações, Climatização HVAC). Apresenta cards visuais detalhados com especificações do projeto, área técnica (m²), localização e modalidade de entrega.",
+      "data_testid": "portfolio-gallery-section"
+    },
+    {
+      "section_id": "atendimento_empresarial",
+      "name": "Atendimento Empresarial & Segmentos B2B",
+      "description": "Seção dedicada aos nichos atendidos pela KSV com ícones e descritivo das necessidades específicas de cada setor: Empresas e Corporações, Lojas & Varejo, Farmácias & Redes de Drogaria, Clínicas & Centros Médicos, Academias & Centros Esportivos, Escritórios & Hubs, Condomínios Comerciais, Facility Managers.",
+      "data_testid": "segmentos-b2b-section"
+    },
+    {
+      "section_id": "servicos_complementares",
+      "name": "Serviços Complementares (Climatização e Manutenção)",
+      "description": "Apresentação focada e técnica dos serviços que complementam as obras principais: Climatização HVAC (PMOC, Instalação VRF/Chiller, Dutos) e Manutenção Predial Preventiva/Corretiva para alta disponibilidade da infraestrutura comercial.",
+      "data_testid": "complementary-services-section"
+    },
+    {
+      "section_id": "formulario_orcamento",
+      "name": "Formulário de Orçamento Completo com Upload de Arquivo",
+      "description": "Formulário B2B estruturado em etapas interativas / campos técnicos (Nome/Empresa, CNPJ/CPF, E-mail, Telefone/WhatsApp, Tipo de Serviço, Local da Obra/Cidade, Prazo Desejado, Descrição do Projeto e Campo Drag-and-Drop de Upload para plantas, memoriais descritivos ou fotos). Inclui validação visual, feedback em toast e envio rápido.",
+      "data_testid": "quote-form-section"
+    },
+    {
+      "section_id": "sobre_ksv",
+      "name": "Sobre a KSV Soluções Integradas",
+      "description": "Apresentação da empresa sediada em Lauro de Freitas – Bahia, destacando o compromisso com a engenharia de infraestrutura, responsabilidade técnica, atendimento regional especializado em Salvador e Região Metropolitana, e visão de parceria duradoura com facility managers e diretores de expansão.",
+      "data_testid": "about-ksv-section"
+    },
+    {
+      "section_id": "cta_final_whatsapp",
+      "name": "CTA Final de Conversão & Botão Flutuante de WhatsApp",
+      "description": "Bloco de alta conversão ao final da página convidando para reuniões técnicas e orçamentos urgentes. Acompanhado de botão flutuante de WhatsApp fixo no canto inferior direito ('Falar com a KSV').",
+      "data_testid": "cta-final-section"
+    },
+    {
+      "section_id": "footer_legal",
+      "name": "Rodapé Corporativo (Footer)",
+      "description": "Footer completo com informações institucionais, endereço em Lauro de Freitas - BA, área de atuação (Salvador, Camaçari, Simões Filho, RMS), atalhos de navegação, contato direto, e links de Política de Privacidade e Termos de Uso com modals interativos.",
+      "data_testid": "footer-section"
+    }
+  ],
+  "image_urls": {
+    "hero_background": "https://images.unsplash.com/photo-1759044814280-e2b98b9609a6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwY29uc3RydWN0aW9uJTIwYnVpbGRpbmclMjByZW5vdmF0aW9uJTIwbW9kZXJuJTIwZW5naW5lZXJpbmd8ZW58MHx8fHwxNzg5NDAwOTk3fDA&ixlib=rb-4.1.0&q=85",
+    "obras_comerciais": "https://images.unsplash.com/photo-1721448288151-f164655fa6e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxjb21tZXJjaWFsJTIwY29uc3RydWN0aW9uJTIwYnVpbGRpbmclMjByZW5vdmF0aW9uJTIwbW9kZXJuJTIwZW5naW5lZXJpbmd8ZW58MHx8fHwxNzg5NDAwOTk3fDA&ixlib=rb-4.1.0&q=85",
+    "reformas_retrofit": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBjb21tZXJjaWFsJTIwaW50ZXJpb3IlMjByZW5vdmF0aW9unGVufDB8fHx8MTc4ODYxNTUxNHww&ixlib=rb-4.1.0&q=85",
+    "adequacoes_tecnicas": "https://images.unsplash.com/photo-1773848987369-38afd0e268d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHw0fHxjb21tZXJjaWFsJTIwY29uc3RydWN0aW9uJTIwYnVpbGRpbmclMjByZW5vdmF0aW9uJTIwbW9kZXJuJTIwZW5naW5lZXJpbmd8ZW58MHx8fHwxNzg5NDAwOTk3fDA&ixlib=rb-4.1.0&q=85",
+    "infraestrutura_eletrica": "https://images.unsplash.com/photo-1509390144018-eeaf65052242?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHw0fHxpbmR1c3RyaWFsJTIwZmFjaWxpdHklMjBlbmdpbmVlcmluZyUyMEhWQUMlMjBlbGVjdHJpY2FsJTIwaW5mcmFzdHJ1Y3R1cmV8ZW58MHx8fHwxNzg5NDAxMDA2fDA&ixlib=rb-4.1.0&q=85",
+    "climatizacao_hvac": "https://images.unsplash.com/photo-1542274368-443d694d79aa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwzfHxpbmR1c3RyaWFsJTIwZmFjaWxpdHklMjBlbmdpbmVlcmluZyUyMEhWQUMlMjBlbGVjdHJpY2FsJTIwaW5mcmFzdHJ1Y3R1cmV8ZW58MHx8fHwxNzg5NDAxMDA2fDA&ixlib=rb-4.1.0&q=85",
+    "manutencao_predial": "https://images.unsplash.com/photo-1717386255773-1e3037c81788?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzZ8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZmFjaWxpdHklMjBlbmdpbmVlcmluZyUyMEhWQUMlMjBlbGVjdHJpY2FsJTIwaW5mcmFzdHJ1Y3R1cmV8ZW58MHx8fHwxNzg5NDAxMDA2fDA&ixlib=rb-4.1.0&q=85",
+    "office_renovation": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBvZmZpY2UlMjBjb21tZXJjaWFsJTIwaW50ZXJpb3IlMjByZW5vdmF0aW9unGVufDB8fHx8MTc4ODYxNTUxNHww&ixlib=rb-4.1.0&q=85",
+    "clinic_renovation": "https://images.unsplash.com/photo-1715593949273-09009558300a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBvZmZpY2UlMjBjb21tZXJjaWFsJTIwaW50ZXJpb3IlMjByZW5vdmF0aW9unGVufDB8fHx8MTc4ODYxNTUxNHww&ixlib=rb-4.1.0&q=85"
+  },
+  "instructions_to_main_agent": [
+    "Utilize framer-motion para revelação scroll suave e lenis/custom smooth scrolling.",
+    "Mantenha o tema predominantemente escuro (fundo preto/grafite profundo) com detalhes em prata metálico e botões CTAs vibrantes em Laranja (#FF6B00) para máxima conversão B2B.",
+    "Respeite integralmente as regras do cliente: NÃO INVENTAR clientes, números de projetos falsos, depoimentos ou certificações não fornecidas.",
+    "O formulário de solicitação de orçamento DEVE incluir suporte funcional a upload de arquivo de projeto (drag & drop ou seletor de arquivo com pré-visualização de nome do arquivo).",
+    "Garanta que TODOS os elementos interativos possuam o atributo data-testid correspondente.",
+    "Adicione o botão flutuante de WhatsApp fixo no canto inferior com tooltip interativo e abertura direta do WhatsApp Web/App com mensagem pré-configurada."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic outputs. In frontend design, make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g. transition: all). Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container (.App { text-align: center; }).",
+    "Always use modern button styles with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 for icons. Use lucide-react or phosphor icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, selection states, and loading animations separate good from extraordinary.",
+    "All interactive elements MUST include data-testid attributes."
+  ]
+}

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 220 14% 4%;
+        --foreground: 220 12% 92%;
+        --card: 222 15% 7%;
+        --card-foreground: 220 12% 92%;
+        --popover: 222 15% 7%;
+        --popover-foreground: 220 12% 92%;
+        --primary: 25 100% 50%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 220 12% 12%;
+        --secondary-foreground: 220 12% 92%;
+        --muted: 220 12% 12%;
+        --muted-foreground: 222 10% 62%;
+        --accent: 220 12% 14%;
+        --accent-foreground: 220 12% 92%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 222 12% 16%;
+        --input: 222 12% 18%;
+        --ring: 25 100% 50%;
+        --radius: 0.375rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+        @apply bg-background text-foreground font-sans;
+        margin: 0;
+    }
+    ::selection {
+        background: #ff6b00;
+        color: #0a0b0d;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #0a0b0d;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #2d323e;
+        border: 2px solid #0a0b0d;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ff6b00;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px rgba(226, 230, 236, 0.22);
+    color: transparent;
+}
+
+@keyframes ksv-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.animate-ksv-marquee {
+    animation: ksv-marquee 48s linear infinite;
+}
+.animate-ksv-marquee:hover {
+    animation-play-state: paused;
+}
+
+.ksv-grain {
+    position: relative;
+}
+.ksv-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
