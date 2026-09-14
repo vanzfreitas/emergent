@@ -1,7 +1,7 @@
 # PRD — KSV Soluções Integradas (Landing Page B2B)
 
 ## Problem statement original
-Landing page profissional, premium e funcional para a KSV Soluções Integradas com foco em GERAR LEADS e solicitações de orçamento para OBRAS, REFORMAS, ADEQUAÇÕES e INFRAESTRUTURA (B2B). Climatização e manutenção como serviços complementares. Requisitos: formulário real com upload, registro de leads em banco, e-mail para contato@ksvsolucao.com.br com assunto exato "Formulario KSV Site", estrutura de notificação WhatsApp, botão WhatsApp (71) 98137-6609, SEO, responsivo, LGPD básica, sem inventar clientes/números/depoimentos.
+Landing page profissional, premium e funcional para a KSV Soluções Integradas com foco em GERAR LEADS e solicitações de orçamento para OBRAS, REFORMAS, ADEQUAÇÕES e INFRAESTRUTURA (B2B). Climatização e manutenção como serviços complementares. Requisitos: formulário real com upload, registro de leads em banco, e-mail para contato@ksvsolucoes.com.br com assunto exato "Formulario KSV Site", estrutura de notificação WhatsApp, botão WhatsApp (71) 98137-6609, SEO, responsivo, LGPD básica, sem inventar clientes/números/depoimentos.
 
 ## Arquitetura
 - Frontend: React 19 + Tailwind + framer-motion + lenis (smooth scroll) — landing one-page com âncoras + páginas legais (/politica-de-privacidade, /termos-de-uso)
@@ -37,13 +37,13 @@ Landing page profissional, premium e funcional para a KSV Soluções Integradas 
 - Design industrial premium: Barlow Condensed / DM Sans / JetBrains Mono, dark theme, lenis + framer-motion
 
 ## Pendências conhecidas
-- E-mail para contato@ksvsolucao.com.br: BLOQUEADO pelo provedor pois a caixa de entrada não existe ainda (erro "undeliverable recipient"). Assim que a caixa for criada no domínio ksvsolucao.com.br, os e-mails passam a chegar automaticamente. Leads ficam salvos no banco de qualquer forma.
+- E-mail para contato@ksvsolucoes.com.br: FUNCIONANDO (domínio corrigido em Jun/2026; antes estava ksvsolucao sem "es", que não existe no DNS).
 - Notificação WhatsApp: aguardando credenciais de API (WhatsApp Business Cloud API, Z-API ou Evolution API) — configurar WHATSAPP_API_URL e WHATSAPP_API_TOKEN no backend/.env
 - Instagram: espaço configurável (INSTAGRAM_URL no backend/.env), oculto até ser definido
 - Fotos reais de projetos: substituir placeholders da galeria
 
 ## Backlog priorizado
-- P0: Criar caixa contato@ksvsolucao.com.br no provedor do domínio (desbloqueia e-mails)
+- (Resolvido) Domínio de e-mail corrigido para ksvsolucoes.com.br
 - P0: Configurar API de WhatsApp para notificações automáticas da equipe
 - P1: Substituir placeholders da galeria por fotos reais das obras
 - P1: Painel admin visual para gestão de leads (hoje via API com X-Admin-Key)
@@ -59,6 +59,6 @@ Landing page profissional, premium e funcional para a KSV Soluções Integradas 
 ## Atualização — Jun/2026 (formulário completo)
 - Endereço completo com autopreenchimento via **ViaCEP** (CEP → rua, bairro, cidade, UF), número, complemento e ponto de referência.
 - Escolha "Orçamento do serviço" ou **"Visita técnica para avaliação"**; data preferida via calendário (pt-BR, sem passado/domingos); período Manhã/Tarde.
-- Backend `POST /api/leads` valida/armazena novos campos (cep, logradouro, numero, complemento, bairro, estado, ponto_referencia, tipo_atendimento, data_preferida, periodo). E-mail/WhatsApp mostram endereço completo, atendimento e data/período. Assunto do e-mail: "[KSV Site] {atendimento} — {nome} — {dd/mm} {período}".
+- Backend `POST /api/leads` valida/armazena novos campos (cep, logradouro, numero, complemento, bairro, estado, ponto_referencia, tipo_atendimento, data_preferida, periodo). E-mail/WhatsApp mostram endereço completo, atendimento e data/período. Assunto do e-mail mantido fixo: "Formulario KSV Site".
 - Componentes: `components/ksv/form/{Field,EnderecoFields,AgendamentoFields}.jsx`.
 - Corrigido: TIPOS_SERVICO do backend agora bate com o frontend (residencial/comercial).

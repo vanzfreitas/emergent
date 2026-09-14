@@ -24,7 +24,7 @@ export const Footer = () => {
                         Obras · Infraestrutura · Manutenção Técnica
                     </p>
                     <p className="mt-4 text-sm text-zinc-500">Lauro de Freitas – Bahia</p>
-                    <p className="text-sm text-zinc-500">contato@ksvsolucao.com.br</p>
+                    <p className="text-sm text-zinc-500">contato@ksvsolucoes.com.br</p>
                 </div>
                 <div>
                     <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-ksv-silverdark mb-5">Navegação</p>
@@ -51,8 +51,8 @@ export const Footer = () => {
                     <ul className="space-y-4 text-sm text-zinc-400">
                         <li className="flex items-center gap-3">
                             <Mail size={15} className="text-ksv-orange shrink-0" />
-                            <a href="mailto:contato@ksvsolucao.com.br" data-testid="footer-email-link" className="hover:text-ksv-orange transition-colors duration-200 break-all">
-                                contato@ksvsolucao.com.br
+                            <a href="mailto:contato@ksvsolucoes.com.br" data-testid="footer-email-link" className="hover:text-ksv-orange transition-colors duration-200 break-all">
+                                contato@ksvsolucoes.com.br
                             </a>
                         </li>
                         <li className="flex items-start gap-3">
@@ -61,7 +61,7 @@ export const Footer = () => {
                         </li>
                         <li className="flex items-center gap-3">
                             <Globe size={15} className="text-ksv-orange shrink-0" />
-                            <span>ksvsolucao.com.br</span>
+                            <span>ksvsolucoes.com.br</span>
                         </li>
                         {cfg.whatsapp_number && (
                             <li className="flex items-center gap-3">

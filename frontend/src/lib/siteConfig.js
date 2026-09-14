@@ -7,7 +7,7 @@ const FALLBACK = {
     whatsapp_number: "5571981376609",
     whatsapp_message: "Olá! Vim pelo site da KSV e gostaria de solicitar um orçamento.",
     instagram_url: "",
-    email: "contato@ksvsolucao.com.br",
+    email: "contato@ksvsolucoes.com.br",
 };
 
 let cache = null;

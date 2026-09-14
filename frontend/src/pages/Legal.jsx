@@ -25,7 +25,7 @@ const DOCS = {
             },
             {
                 h: "5. Seus direitos (LGPD)",
-                p: "Você pode solicitar a confirmação, o acesso, a correção ou a exclusão dos seus dados pessoais a qualquer momento pelo e-mail contato@ksvsolucao.com.br.",
+                p: "Você pode solicitar a confirmação, o acesso, a correção ou a exclusão dos seus dados pessoais a qualquer momento pelo e-mail contato@ksvsolucoes.com.br.",
             },
             {
                 h: "6. Cookies",
@@ -102,7 +102,7 @@ export default function Legal({ doc }) {
                     ))}
                 </div>
                 <p className="mt-14 text-xs text-zinc-600">
-                    Dúvidas: contato@ksvsolucao.com.br · Av. Fortaleza, 722 – Lauro de Freitas – BA
+                    Dúvidas: contato@ksvsolucoes.com.br · Av. Fortaleza, 722 – Lauro de Freitas – BA
                 </p>
             </main>
         </div>

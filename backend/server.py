@@ -34,7 +34,7 @@ EMAIL_BASE_URL = "https://integrations.emergentagent.com"
 EMAIL_KEY = os.environ.get("EMERGENT_EMAIL_KEY", "")
 EMAIL_FROM_NAME = os.environ.get("EMAIL_FROM_NAME", "KSV Soluções Integradas")
 EMAIL_REPLY_TO = os.environ.get("EMAIL_REPLY_TO", "")
-LEADS_EMAIL_TO = os.environ.get("LEADS_EMAIL_TO", "contato@ksvsolucao.com.br")
+LEADS_EMAIL_TO = os.environ.get("LEADS_EMAIL_TO", "contato@ksvsolucoes.com.br")
 
 WHATSAPP_SITE_NUMBER = os.environ.get("WHATSAPP_SITE_NUMBER", "")
 WHATSAPP_NOTIFY_NUMBER = os.environ.get("WHATSAPP_NOTIFY_NUMBER", "")
@@ -376,7 +376,7 @@ async def create_lead(
     try:
         await send_email(
             to=LEADS_EMAIL_TO,
-            subject=f"[KSV Site] {tipo_atendimento} — {nome} — {data_dt.strftime('%d/%m')} {periodo}",
+            subject="Formulario KSV Site",
             html=build_email_html(doc),
             reply_to=email,
         )

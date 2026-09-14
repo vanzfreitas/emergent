@@ -114,7 +114,7 @@ export const Formulario = () => {
                             <Mail size={18} className="text-ksv-orange mt-0.5 shrink-0" />
                             <div>
                                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ksv-silverdark">E-mail</p>
-                                <p className="text-sm text-ksv-silver">contato@ksvsolucao.com.br</p>
+                                <p className="text-sm text-ksv-silver">contato@ksvsolucoes.com.br</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -129,7 +129,7 @@ export const Formulario = () => {
                             <Globe size={18} className="text-ksv-orange mt-0.5 shrink-0" />
                             <div>
                                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ksv-silverdark">Site</p>
-                                <p className="text-sm text-ksv-silver">ksvsolucao.com.br</p>
+                                <p className="text-sm text-ksv-silver">ksvsolucoes.com.br</p>
                             </div>
                         </div>
                     </div>

@@ -34,11 +34,11 @@ export const Sobre = () => (
                     <div className="mt-8 pt-8 border-t border-ksv-edge grid grid-cols-2 gap-6">
                         <div>
                             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ksv-silverdark">E-mail</p>
-                            <p className="mt-1 text-sm text-ksv-silver break-all">contato@ksvsolucao.com.br</p>
+                            <p className="mt-1 text-sm text-ksv-silver break-all">contato@ksvsolucoes.com.br</p>
                         </div>
                         <div>
                             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ksv-silverdark">Site</p>
-                            <p className="mt-1 text-sm text-ksv-silver">ksvsolucao.com.br</p>
+                            <p className="mt-1 text-sm text-ksv-silver">ksvsolucoes.com.br</p>
                         </div>
                     </div>
                 </div>
