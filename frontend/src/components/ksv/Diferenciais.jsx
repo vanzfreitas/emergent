@@ -6,7 +6,7 @@ const ITEMS = [
     "Soluções integradas",
     "Atendimento profissional",
     "Equipe técnica",
-    "Foco em clientes empresariais",
+    "Atendimento residencial e empresarial",
     "Acompanhamento da execução",
     "Capacidade de atender diferentes necessidades dentro de um mesmo projeto",
 ];
@@ -20,7 +20,7 @@ export const Diferenciais = () => (
                     Por que contratar a KSV?
                 </h2>
                 <p className="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed max-w-lg">
-                    Uma equipe preparada para conduzir obras, reformas e adequações em ambientes empresariais,
+                    Uma equipe preparada para conduzir obras, reformas e adequações em residências e ambientes empresariais,
                     com organização e acompanhamento em todas as etapas.
                 </p>
             </Reveal>

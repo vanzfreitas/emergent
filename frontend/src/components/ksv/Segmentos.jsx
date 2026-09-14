@@ -1,7 +1,8 @@
-import { Store, Pill, Stethoscope, Dumbbell, Briefcase, Building, Users } from "lucide-react";
+import { Home, Store, Pill, Stethoscope, Dumbbell, Briefcase, Building, Users } from "lucide-react";
 import { Reveal, Eyebrow } from "./Reveal";
 
 const SEGMENTS = [
+    { icon: Home, label: "Residências" },
     { icon: Store, label: "Lojas" },
     { icon: Pill, label: "Farmácias" },
     { icon: Stethoscope, label: "Clínicas" },
@@ -15,13 +16,13 @@ export const Segmentos = () => (
     <section id="segmentos" data-testid="segmentos-b2b-section" className="py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal>
-                <Eyebrow>Atendimento empresarial</Eyebrow>
+                <Eyebrow>Atendimento residencial e empresarial</Eyebrow>
                 <h2 className="font-display font-bold uppercase text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ksv-silver max-w-3xl">
-                    Soluções para empresas e estabelecimentos comerciais
+                    Soluções para residências, empresas e estabelecimentos comerciais
                 </h2>
                 <p className="mt-6 text-base sm:text-lg text-zinc-400 max-w-3xl leading-relaxed">
-                    Cada operação possui necessidades diferentes. A KSV trabalha com soluções integradas para
-                    adequação, reforma, infraestrutura e manutenção de ambientes empresariais.
+                    Cada espaço possui necessidades diferentes. A KSV trabalha com soluções integradas para
+                    adequação, reforma, infraestrutura e manutenção de ambientes residenciais e empresariais.
                 </p>
             </Reveal>
             <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -38,13 +39,6 @@ export const Segmentos = () => (
                         </div>
                     </Reveal>
                 ))}
-                <Reveal delay={0.35}>
-                    <div className="hidden lg:flex items-center justify-center border border-dashed border-ksv-edge px-5 py-6 h-full">
-                        <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ksv-silverdark text-center">
-                            E outros ambientes empresariais
-                        </span>
-                    </div>
-                </Reveal>
             </div>
         </div>
     </section>

@@ -1,12 +1,14 @@
 const ITEMS = [
+    "Obras residenciais",
     "Obras comerciais",
     "Reformas",
     "Adequações",
     "Infraestrutura",
     "Pisos e revestimentos",
     "Forros e acabamentos",
+    "Salvador",
     "Lauro de Freitas",
-    "Salvador e região",
+    "Camaçari e região",
 ];
 
 export const Marquee = () => (

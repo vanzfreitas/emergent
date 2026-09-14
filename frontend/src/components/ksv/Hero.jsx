@@ -10,7 +10,7 @@ const LINES = [
     { text: "do início ao fim.", accent: false },
 ];
 
-const CHIPS = ["Obras comerciais", "Reformas", "Adequações", "Infraestrutura"];
+const CHIPS = ["Obras residenciais", "Obras comerciais", "Reformas", "Adequações", "Infraestrutura"];
 
 export const Hero = () => {
     const cfg = useSiteConfig();
@@ -34,7 +34,7 @@ export const Hero = () => {
                         className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-ksv-silvermid mb-8 flex items-center gap-3"
                     >
                         <span className="inline-block w-8 h-px bg-ksv-orange" />
-                        Lauro de Freitas · Salvador e região — BA
+                        Salvador · Lauro de Freitas · Camaçari e região — BA
                     </motion.p>
                     <h1 className="font-display font-extrabold uppercase text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-ksv-silver">
                         {LINES.map((line, i) => (
@@ -58,7 +58,7 @@ export const Hero = () => {
                         className="mt-8 text-base sm:text-lg text-zinc-400 max-w-xl leading-relaxed"
                     >
                         A KSV Soluções Integradas executa obras, reformas, adequações e serviços de infraestrutura
-                        para empresas e estabelecimentos comerciais.
+                        para residências, empresas, condomínios e estabelecimentos comerciais.
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 16 }}
@@ -110,7 +110,7 @@ export const Hero = () => {
                         <motion.img
                             style={{ y }}
                             src="https://images.unsplash.com/photo-1759044814280-e2b98b9609a6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwY29uc3RydWN0aW9uJTIwYnVpbGRpbmclMjByZW5vdmF0aW9uJTIwbW9kZXJuJTIwZW5naW5lZXJpbmd8ZW58MHx8fHwxNzg5NDAwOTk3fDA&ixlib=rb-4.1.0&q=85"
-                            alt="Obra comercial em execução profissional"
+                            alt="Obra em execução profissional"
                             className="w-full h-[112%] object-cover"
                             loading="eager"
                         />

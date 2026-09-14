@@ -49,3 +49,9 @@ Landing page profissional, premium e funcional para a KSV Soluções Integradas 
 - P1: Painel admin visual para gestão de leads (hoje via API com X-Admin-Key)
 - P2: Instagram ativo no rodapé
 - P2: Blog/conteúdo para SEO local
+
+
+## Atualização — Jun/2026 (posicionamento)
+- Cidade principal agora é **Salvador**, seguida de Lauro de Freitas, Camaçari e região (Hero, Marquee, Sobre, Formulário, SEO meta).
+- Posicionamento ampliado: atendimento **residencial + empresarial** (Hero, Obras com card "Obras residenciais", Segmentos com "Residências", Diferenciais, Complementares, CTA final, Portfólio "Reforma residencial").
+- Formulário: campo Empresa agora é "Empresa / Condomínio (opcional)"; tipos de serviço separados em residencial/comercial.

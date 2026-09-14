@@ -14,7 +14,7 @@ export const Sobre = () => (
                 </p>
                 <p className="mt-6 text-base text-zinc-400 leading-relaxed max-w-xl">
                     A KSV Soluções Integradas é voltada à execução de obras, reformas, adequações e soluções de
-                    infraestrutura para empresas e estabelecimentos comerciais. A equipe atua do entendimento da
+                    infraestrutura para residências, empresas, condomínios e estabelecimentos comerciais. A equipe atua do entendimento da
                     necessidade à entrega, com organização e acompanhamento em cada etapa do serviço.
                 </p>
             </Reveal>
@@ -28,7 +28,7 @@ export const Sobre = () => (
                                 Lauro de Freitas – Bahia
                             </p>
                             <p className="mt-2 text-sm text-zinc-400">Av. Fortaleza, 722 – Lauro de Freitas – BA</p>
-                            <p className="mt-1 text-sm text-zinc-500">Atuação: Lauro de Freitas, Salvador e região.</p>
+                            <p className="mt-1 text-sm text-zinc-500">Atuação: Salvador, Lauro de Freitas, Camaçari e região.</p>
                         </div>
                     </div>
                     <div className="mt-8 pt-8 border-t border-ksv-edge grid grid-cols-2 gap-6">

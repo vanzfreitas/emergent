@@ -10,7 +10,7 @@ export const CtaFinal = () => {
             <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
                 <Reveal>
                     <h2 className="font-display font-extrabold uppercase text-3xl sm:text-4xl lg:text-5xl tracking-tight text-ksv-silver leading-tight">
-                        Sua empresa precisa de uma <span className="text-ksv-orange">obra, reforma ou adequação?</span>
+                        Sua casa ou empresa precisa de uma <span className="text-ksv-orange">obra, reforma ou adequação?</span>
                     </h2>
                     <p className="mt-6 text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
                         Fale com a KSV Soluções Integradas e apresente sua necessidade para nossa equipe.

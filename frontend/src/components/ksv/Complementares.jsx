@@ -3,8 +3,8 @@ import { Reveal, Eyebrow } from "./Reveal";
 
 const ITEMS = [
     { icon: Network, title: "Infraestrutura", text: "Estruturas e instalações para o funcionamento do espaço." },
-    { icon: Snowflake, title: "Climatização", text: "Soluções de climatização para ambientes comerciais." },
-    { icon: Wrench, title: "Manutenção técnica", text: "Serviços técnicos de manutenção para empresas." },
+    { icon: Snowflake, title: "Climatização", text: "Soluções de climatização para ambientes residenciais e comerciais." },
+    { icon: Wrench, title: "Manutenção técnica", text: "Serviços técnicos de manutenção para residências e empresas." },
     { icon: Ruler, title: "Adequações", text: "Adaptação de ambientes a novas necessidades de operação." },
     { icon: Settings, title: "Serviços complementares", text: "Apoio técnico integrado às obras executadas." },
 ];

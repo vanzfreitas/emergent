@@ -18,8 +18,8 @@ const PROJECTS = [
         label: "Infraestrutura técnica",
     },
     {
-        img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBvZmZpY2UlMjBjb21tZXJjaWFsJTIwaW50ZXJpb3IlMjByZW5vdmF0aW9unGVufDB8fHx8MTc4ODYxNTUxNHww&ixlib=rb-4.1.0&q=85",
-        label: "Escritório reformado",
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=srgb&fm=jpg&w=1200&q=80",
+        label: "Reforma residencial",
     },
     {
         img: "https://images.unsplash.com/photo-1715593949273-09009558300a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBvZmZpY2UlMjBjb21tZXJjaWFsJTIwaW50ZXJpb3IlMjByZW5vdmF0aW9unGVufDB8fHx8MTc4ODYxNTUxNHww&ixlib=rb-4.1.0&q=85",

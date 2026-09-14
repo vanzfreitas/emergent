@@ -1,8 +1,13 @@
-import { Building2, Hammer, Ruler, HardHat, Layers, PanelTop, ArrowUpRight } from "lucide-react";
+import { Home, Building2, Hammer, Ruler, HardHat, Layers, PanelTop, ArrowUpRight } from "lucide-react";
 import { Reveal, Eyebrow } from "./Reveal";
 import { scrollToId } from "@/lib/siteConfig";
 
 const CARDS = [
+    {
+        icon: Home,
+        title: "Obras residenciais",
+        text: "Construção, ampliação e reforma completa de casas e apartamentos, do projeto ao acabamento.",
+    },
     {
         icon: Building2,
         title: "Obras comerciais",
@@ -11,7 +16,7 @@ const CARDS = [
     {
         icon: Hammer,
         title: "Reformas",
-        text: "Reformas e revitalizações para ambientes comerciais e empresariais.",
+        text: "Reformas e revitalizações para residências, ambientes comerciais e empresariais.",
     },
     {
         icon: Ruler,
@@ -44,7 +49,7 @@ export const Obras = () => (
                     Obras e Reformas
                 </h2>
                 <p className="mt-6 text-base sm:text-lg text-zinc-400 max-w-3xl leading-relaxed">
-                    Do planejamento à execução, a KSV atua na transformação e adequação de espaços comerciais,
+                    Do planejamento à execução, a KSV atua na transformação e adequação de espaços residenciais e comerciais,
                     buscando organização, qualidade de execução e acompanhamento em cada etapa.
                 </p>
             </Reveal>

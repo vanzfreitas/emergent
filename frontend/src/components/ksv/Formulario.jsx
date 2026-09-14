@@ -7,8 +7,10 @@ import { API, useSiteConfig, waLink } from "@/lib/siteConfig";
 import { Reveal, Eyebrow } from "./Reveal";
 
 const TIPOS = [
-    "Obra",
-    "Reforma",
+    "Obra residencial",
+    "Obra comercial",
+    "Reforma residencial",
+    "Reforma comercial",
     "Adequação",
     "Infraestrutura",
     "Piso e revestimento",
@@ -113,7 +115,7 @@ export const Formulario = () => {
                             <div>
                                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ksv-silverdark">Endereço</p>
                                 <p className="text-sm text-ksv-silver">Av. Fortaleza, 722 – Lauro de Freitas – BA</p>
-                                <p className="text-xs text-zinc-500 mt-1">Atuação: Lauro de Freitas, Salvador e região</p>
+                                <p className="text-xs text-zinc-500 mt-1">Atuação: Salvador, Lauro de Freitas, Camaçari e região</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -180,17 +182,17 @@ export const Formulario = () => {
                                     <Field label="Nome *" error={errors.nome} testid="form-field-nome">
                                         <input data-testid="form-nome-input" className={inputCls} value={form.nome} onChange={set("nome")} placeholder="Seu nome" />
                                     </Field>
-                                    <Field label="Empresa" error={errors.empresa} testid="form-field-empresa">
+                                    <Field label="Empresa / Condomínio (opcional)" error={errors.empresa} testid="form-field-empresa">
                                         <input data-testid="form-empresa-input" className={inputCls} value={form.empresa} onChange={set("empresa")} placeholder="Nome da empresa" />
                                     </Field>
                                     <Field label="WhatsApp *" error={errors.whatsapp} testid="form-field-whatsapp">
                                         <input data-testid="form-whatsapp-input" className={inputCls} value={form.whatsapp} onChange={set("whatsapp")} placeholder="(71) 90000-0000" />
                                     </Field>
                                     <Field label="E-mail *" error={errors.email} testid="form-field-email">
-                                        <input data-testid="form-email-input" type="email" className={inputCls} value={form.email} onChange={set("email")} placeholder="voce@empresa.com.br" />
+                                        <input data-testid="form-email-input" type="email" className={inputCls} value={form.email} onChange={set("email")} placeholder="voce@email.com.br" />
                                     </Field>
                                     <Field label="Cidade *" error={errors.cidade} testid="form-field-cidade">
-                                        <input data-testid="form-cidade-input" className={inputCls} value={form.cidade} onChange={set("cidade")} placeholder="Lauro de Freitas" />
+                                        <input data-testid="form-cidade-input" className={inputCls} value={form.cidade} onChange={set("cidade")} placeholder="Salvador" />
                                     </Field>
                                     <Field label="Tipo de serviço *" error={errors.tipo_servico} testid="form-field-tipo">
                                         <select data-testid="form-tipo-select" className={inputCls} value={form.tipo_servico} onChange={set("tipo_servico")}>
